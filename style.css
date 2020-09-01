@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(20,110,20);
+}
+.title {
+    margin-top: 50px;
+    text-align: center;
+    color: black;
+    width: 600px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+h3 {
+    text-align: center;
+}
+#choices {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center; 
+}
+button {
+    height: 20em;
+    width: 15em;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: white;
+    border-color: black;
+    cursor: pointer;
+}
+button:hover {
+    border-color: black;
+    border-width: 8px;
+    border-style: solid;
+}
+#rock {
+    background-image:url(pics/rock.png);
+    background-repeat:no-repeat;
+    background-size: 13em;
+    background-position: center;
+}
+#paper {
+    background-image:url(pics/paper.png);
+    background-repeat:no-repeat;
+    background-size: 13em;
+    background-position: center;
+}
+#scissors {
+    background-image:url(pics/scissors.png);
+    background-repeat:no-repeat;
+    background-size: 12em;
+    background-position: center;
+}
+#results {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-evenly;
+    font-size: 25px;
+}
+.playerscore {
+    padding: 5px;
+    width: 150px;
+    text-align: center;
+}
+.CPUscore {
+    padding: 5px;
+    width: 150px;
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+.roundresult {
+    padding: 5px;
+    font-size: 25px;
+}
