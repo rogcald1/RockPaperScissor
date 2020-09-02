@@ -59,16 +59,20 @@ button:hover {
     padding: 5px;
     width: 150px;
     text-align: center;
+    border: solid; 
 }
 .CPUscore {
     padding: 5px;
     width: 150px;
     text-align: center;
+    border: solid; 
 }
 p {
     text-align: center;
+    margin: 10px; 
 }
 .roundresult {
     padding: 5px;
     font-size: 25px;
+    margin: 15px; 
 }
