@@ -1,7 +1,6 @@
 let playerScore = 0;
 let cpuScore = 0;
-let roundResult = 'First to 5 wins!';
-let max_count = 5;
+let roundResult = '';
 
 let computerSelection = function() {
     let ranNum = Math.floor(Math.random() * 3);
@@ -19,35 +18,28 @@ let computerSelection = function() {
     return play;
 };
 
-// function game() {
-    
-//     function showConfirm1() {
-//         max_count = 5;
-//         let playerChoice1 = prompt("What's your first choice: rock, paper, or scissors?").toLowerCase();
-//         if (playerChoice1 == 'rock' || playerChoice1 == 'paper' || playerChoice1 == 'scissors') {
-//             let result1 = playRound(playerChoice1, computerSelection());
-//             alert(result1);
-//         } else {
-//             alert("Didn't get a correct value, try again. Rock, paper, or scissors?");
-//             if (--max_count > 0)
-//             showConfirm1()
-//         }
-//     }
-//     showConfirm1();
-
 function playRound(playerSelection, computerSelection) {
+        for (; (playerScore < 5) && (cpuScore < 5);) {
         if ((playerSelection.toLowerCase() === 'rock') && (computerSelection === 'scissors')) {
         let result = 'You win! Rock beats scissors!';
         playerScore++;
         pscore.textContent = `${playerScore}`;
+        if (playerScore == 5) {
+            rscore.textContent = 'You win!';
+        } else {
         rscore.textContent = `${result}`;
+        }
         return result;
         }
         else if ((playerSelection.toLowerCase() === 'rock') && (computerSelection === 'paper')) {
         let result = "You lose! Paper beats rock!"; 
         cpuScore++;
         cscore.textContent = `${cpuScore}`;
+        if (cpuScore == 5) {
+            rscore.textContent = 'CPU wins :[';
+        } else {
         rscore.textContent = `${result}`;
+        }
         return result;
         }
         else if ((playerSelection.toLowerCase() === 'rock') && (computerSelection === 'rock')) {
@@ -59,14 +51,22 @@ function playRound(playerSelection, computerSelection) {
         let result = "You win! Scissors beats paper!"; 
         playerScore++;
         pscore.textContent = `${playerScore}`;
+        if (playerScore == 5) {
+            rscore.textContent = 'You win!';
+        } else {
         rscore.textContent = `${result}`;
+        }
         return result;
         }
         else if ((playerSelection.toLowerCase() === 'scissors') && (computerSelection === 'rock')) {
         let result = "You lose! Rock beats scissors!"; 
         cpuScore++;
         cscore.textContent = `${cpuScore}`;
+        if (cpuScore == 5) {
+            rscore.textContent = 'CPU wins :[';
+        } else {
         rscore.textContent = `${result}`;
+        }        
         return result;
         }
         else if ((playerSelection.toLowerCase() === 'scissors') && (computerSelection === 'scissors')) {
@@ -83,14 +83,22 @@ function playRound(playerSelection, computerSelection) {
         let result = "You win! Paper beats rock!";
         playerScore++;
         pscore.textContent = `${playerScore}`;
+        if (playerScore == 5) {
+            rscore.textContent = 'You win!';
+        } else {
         rscore.textContent = `${result}`;
+        }
         return result;
         }
         else if ((playerSelection.toLowerCase() === 'paper') && (computerSelection === 'scissors')) {
         let result = "You lose! Scissors beat paper!"; 
         cpuScore++;
         cscore.textContent = `${cpuScore}`;
+        if (cpuScore == 5) {
+            rscore.textContent = 'CPU wins :[';
+        } else {
         rscore.textContent = `${result}`;
+        }        
         return result;
         }
         else {
@@ -98,7 +106,7 @@ function playRound(playerSelection, computerSelection) {
             return result;
         }
     }
-// }
+}
 
 const buttons = document.getElementById("choices");
 buttons.addEventListener("click",function(e){
@@ -114,23 +122,18 @@ buttons.addEventListener("click",function(e){
    }
 })
 
-const pcontainer = document.querySelector(".playerscore");
 
+const pcontainer = document.querySelector(".playerscore");
 const pscore = document.createElement('p');
 pscore.textContent = `${playerScore}`;
-
 pcontainer.appendChild(pscore);
 
 const scontainer = document.querySelector(".CPUscore");
-
 const cscore = document.createElement('p');
 cscore.textContent = `${cpuScore}`;
-
 scontainer.appendChild(cscore);
 
 const resultcontainer = document.querySelector(".roundresult");
-
 const rscore = document.createElement('p');
-rscore.textContent = `${roundResult}`;
-
+rscore.textContent = `First to 5, wins!`
 resultcontainer.appendChild(rscore)
